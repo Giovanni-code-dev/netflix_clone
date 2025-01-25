@@ -9,6 +9,90 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
+        .square-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 1px;
+            /* Arrotondamento leggero */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .square-icon:hover {
+            background-color: #f8f9fa;
+            /* Sfondo chiaro al passaggio del mouse */
+            color: #000;
+            /* Colore dell'icona */
+            transform: scale(1.1);
+            /* Ingrandimento leggero */
+        }
+
+        /* Stile generico per gli elementi */
+        header nav:first-of-type li,
+        footer p,
+        footer button,
+        footer .bi {
+            opacity: 0.5;
+            /* Opacità iniziale */
+            transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+            /* Animazione fluida */
+        }
+
+        /* Hover e focus per rendere visibili gli elementi */
+        header nav:first-of-type li:hover,
+        header nav:first-of-type li:focus,
+        footer p:hover,
+        footer p:focus,
+        footer button:hover,
+        footer button:focus,
+        footer .bi:hover,
+        footer .bi:focus {
+            opacity: 1;
+            /* Aumenta l'opacità */
+        }
+
+        /* Stili specifici per elementi */
+        header nav:first-of-type li:hover,
+        header nav:first-of-type li:focus,
+        footer p:hover,
+        footer p:focus {
+            color: #ffffff;
+            /* Testo più bianco */
+        }
+
+        footer button:hover,
+        footer button:focus {
+            background-color: #ffffff;
+            /* Cambia sfondo a bianco */
+            color: #000;
+            /* Cambia il testo a nero */
+        }
+
+        footer .bi:hover,
+        footer .bi:focus {
+            transform: scale(1.2);
+            /* Ingrandisce leggermente le icone */
+            color: #ffffff;
+            /* Cambia il colore delle icone a bianco */
+        }
+        .hidden {
+    opacity: 0; /* Invisibile inizialmente */
+    transform: translateY(50px); /* Spostato verso il basso */
+    transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    /* Transizione fluida con easing */
+}
+
+.show {
+    opacity: 1; /* Completamente visibile */
+    transform: translateY(0); /* Posizione originale */
+    transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+
+
         #brand {
             width: 140px;
         }
@@ -41,13 +125,18 @@
 
         .movie_item img {
             object-fit: cover;
-            transition: transform 0.1s ease;
+            transition: transform 0.5s ease;
             box-shadow: 0 0 0 1px #000;
 
         }
 
         .movie_item:hover img {
-            transform: scale(1.3);
+            transform: scale(1.5);
+
+        }
+
+        footer {
+            font-size: 0.7rem;
 
         }
     </style>
@@ -115,9 +204,9 @@
                 <div class="col col-auto">
                     <select class="form-select rounded-0 custom-select" aria-label="Default select example">
                         <option selected>Genres</option>
-                        <option value="1">Amateur</option>
-                        <option value="2">Arab</option>
-                        <option value="3">Tiny</option>
+                        <option value="1">Select 2</option>
+                        <option value="2">Select 3</option>
+                        <option value="3">Select 4</option>
                     </select>
                 </div>
                 <div class="col"></div>
@@ -140,37 +229,37 @@
 
 
 
-            <div class="row my-4 g-1">
+            <div class="row my-4 g-1 hidden">
                 <div class="col-12">
-                    <h2>Trending Now</h2>
+                    <h5>Trending Now</h5>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
                     </a>
                 </div>
 
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
                     </a>
@@ -178,37 +267,235 @@
 
             </div>
 
-            <div class="row my-4 g-1">
+
+            <div class="row my-4 g-1 hidden">
+                <div class="col-12">
+                    <h5>Trending Now</h5>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+            </div>
+
+
+
+            <div class="row my-4 g-1 hidden">
+                <div class="col-12">
+                    <h5>Trending Now</h5>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="row my-4 g-1 hidden">
+                <div class="col-12">
+                    <h5>Trending Now</h5>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="row my-4 g-1 hidden">
+                <div class="col-12">
+                    <h5>Trending Now</h5>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+            </div>
+
+
+
+            <div class="row my-4 g-1 hidden">
+                <div class="col-12">
+                    <h5>Trending Now</h5>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="row my-4 g-1 hidden">
                 <div class="col-12">
                     <h2>Watch It Againg</h2>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/7.png" alt="filmPrimo">
                     </a>
                 </div>
 
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/8.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/9.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/10.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/11.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/12.png" alt="filmPrimo">
                     </a>
@@ -216,47 +503,43 @@
 
             </div>
 
-            <div class="row my-4 g-1">
+            <div class="row my-4 g-1 hidden">
                 <div class="col-12">
                     <h2>New Relase</h2>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/13.png" alt="filmPrimo">
                     </a>
                 </div>
 
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/14.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/15.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/16.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/17.png" alt="filmPrimo">
                     </a>
                 </div>
-                <div class="col col-2">
+                <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
                         <img class="img-fluid" src="/assests/imgs/movies/18.png" alt="filmPrimo">
                     </a>
                 </div>
 
             </div>
-
-
-
-
 
 
         </div>
@@ -267,18 +550,20 @@
             <!-- Icone Social -->
             <div class="row text-left mb-3">
                 <div class="col">
-                    <a href="#" class="text-light mx-2">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="#" class="text-light mx-2">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="#" class="text-light mx-2">
-                        <i class="bi bi-twitter"></i>
-                    </a>
-                    <a href="#" class="text-light mx-2">
-                        <i class="bi bi-youtube"></i>
-                    </a>
+                    <div class="d-flex justify-content-start align-items-center gap-3">
+                        <a href="#" class="square-icon text-reset text-decoration-none">
+                            <i class="bi bi-facebook fs-4"></i>
+                        </a>
+                        <a href="#" class="square-icon text-reset text-decoration-none">
+                            <i class="bi bi-instagram fs-4"></i>
+                        </a>
+                        <a href="#" class="square-icon text-reset text-decoration-none">
+                            <i class="bi bi-twitter fs-4"></i>
+                        </a>
+                        <a href="#" class="square-icon text-reset text-decoration-none">
+                            <i class="bi bi-youtube fs-4"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <!-- Link Informativi -->
@@ -329,6 +614,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
 </body>
 
 </html>
