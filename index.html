@@ -9,304 +9,139 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        .square-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 1px;
-            /* Arrotondamento leggero */
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .square-icon:hover {
-            background-color: #f8f9fa;
-            /* Sfondo chiaro al passaggio del mouse */
-            color: #000;
-            /* Colore dell'icona */
-            transform: scale(1.1);
-            /* Ingrandimento leggero */
-        }
-
-        /* Stile generico per gli elementi */
-        header nav:first-of-type li,
-        footer p,
-        footer button,
-        footer .bi {
-            opacity: 0.5;
-            /* Opacità iniziale */
-            transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-            /* Animazione fluida */
-        }
-
-        /* Hover e focus per rendere visibili gli elementi */
-        header nav:first-of-type li:hover,
-        header nav:first-of-type li:focus,
-        footer p:hover,
-        footer p:focus,
-        footer button:hover,
-        footer button:focus,
-        footer .bi:hover,
-        footer .bi:focus {
-            opacity: 1;
-            /* Aumenta l'opacità */
-        }
-
-        /* Stili specifici per elementi */
-        header nav:first-of-type li:hover,
-        header nav:first-of-type li:focus,
-        footer p:hover,
-        footer p:focus {
-            color: #ffffff;
-            /* Testo più bianco */
-        }
-
-        footer button:hover,
-        footer button:focus {
-            background-color: #ffffff;
-            /* Cambia sfondo a bianco */
-            color: #000;
-            /* Cambia il testo a nero */
-        }
-
-        footer .bi:hover,
-        footer .bi:focus {
-            transform: scale(1.2);
-            /* Ingrandisce leggermente le icone */
-            color: #ffffff;
-            /* Cambia il colore delle icone a bianco */
-        }
-        .hidden {
-    opacity: 0; /* Invisibile inizialmente */
-    transform: translateY(50px); /* Spostato verso il basso */
-    transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-    /* Transizione fluida con easing */
-}
-
-.show {
-    opacity: 1; /* Completamente visibile */
-    transform: translateY(0); /* Posizione originale */
-    transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-
-
         #brand {
             width: 140px;
         }
 
-        .netflix_user {
+        .user_netflix {
             width: 30px;
         }
 
-        .custom-select {
-            background-color: #111;
-            /* Sfondo nero */
-            color: #fff;
-            /* Testo bianco */
-            border: 1px solid #fff;
-            /* Bordo grigio scuro */
-            appearance: none;
-            /* Rimuove la freccia nativa */
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            padding-right: 2.5rem;
-            /* Spazio per la freccia personalizzata */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath d='M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 0.75rem center;
-            background-size: 1rem;
-            font-size: 0.80rem;
-        }
+ 
 
-        .movie_item {}
+        .movie_item {
+            width: 100%;
+            display: block;
+        }
 
         .movie_item img {
             object-fit: cover;
-            transition: transform 0.5s ease;
-            box-shadow: 0 0 0 1px #000;
-
+            transition: transform 0.3s ease;
+            width: 100%;
         }
 
         .movie_item:hover img {
-            transform: scale(1.5);
-
+            transform: scale(1.3);
         }
 
         footer {
-            font-size: 0.7rem;
+
+            
+            max-width: 80%;
+            margin: auto;
+        }
+
+        footer li {
+            list-style: none;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #666;
+            font-size: small;
 
         }
+
+
+
+
+
+      
     </style>
 </head>
 
 <body class="bg-dark text-light">
-    <header>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col col-auto">
-                    <img class="img-fluid" id="brand" src="/assests/imgs/Netflix_Logo_RGB.png" alt="Netflix_Logo_RGB">
-                </div>
-                <div class="col col-auto">
-                    <nav>
-                        <ul class="p-0 m-0 list-inline">
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href="">Home</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href="">TV Shows</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href="">Movies</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href="">Recently Added</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href="">My List</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col"></div>
-                <div class="col col-auto">
-                    <nav>
-                        <ul class="p-0 m-0 list-inline small">
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href=""><i class="bi bi-search"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href="">KIDS</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href=""><i class="bi bi-bell-fill"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-reset text-decoration-none" href="">
-                                    <img class="netflix_user" src="/assests/imgs/netflix_user.png" alt="netflix_user">
-                                    <i class="bi bi-caret-down-fill small"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+    <header class="sticky-top bg-dark">
 
-            </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="container-fluid">
 
 
-            <div class="row align-items-center">
-                <div class="col col-auto">
-                    <h1>TV Shows</h1>
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid" id="brand" src="/assests/imgs/Netflix_Logo_RGB.png" alt="logo netflix">
+                </a>
 
-                </div>
-                <div class="col col-auto">
-                    <select class="form-select rounded-0 custom-select" aria-label="Default select example">
-                        <option selected>Genres</option>
-                        <option value="1">Select 2</option>
-                        <option value="2">Select 3</option>
-                        <option value="3">Select 4</option>
-                    </select>
-                </div>
-                <div class="col"></div>
-                <div class="col col-auto d-flex">
-                    <a class="text-light text-decoration-none py-1 px-3 small d-block border " href="">
-                        <i class="bi bi-text-left"></i>
-                    </a>
-                    <a class="text-light text-decoration-none py-1 px-3 small d-block border border-start-0" href="">
-                        <i class="bi bi-grid-fill"></i>
-                    </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tv Shows</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Movies</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recently Added</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My List</a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="text-reset text-decoration-none ps-3 nav-item">
+                                <i class="bi bi-search"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="text-reset text-decoration-none ps-3 nav-item" href="">KIDS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="text-reset text-decoration-none ps-3 nav-item">
+                                <i class="bi bi-bell-fill"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="text-reset text-decoration-none ps-3 nav-item" href="">
+                                <img class="user_netflix" src="/assests/imgs/netflix_user.png" alt="user">
+                                <i class="bi bi-caret-down-fill small"></i>
+                            </a>
+                        </li>
+
+
+
+
+                    </ul>
+
                 </div>
             </div>
-        </div>
-
+        </nav>
 
     </header>
 
     <main>
         <div class="container">
-
-
-
-            <div class="row my-4 g-1 hidden">
-                <div class="col-12">
-                    <h5>Trending Now</h5>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
-                    </a>
-                </div>
-
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
-                    </a>
-                </div>
-
-            </div>
-
-
-            <div class="row my-4 g-1 hidden">
-                <div class="col-12">
-                    <h5>Trending Now</h5>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
-                    </a>
-                </div>
-
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
-                    </a>
-                </div>
-
-            </div>
-
-
+           
+            
+            
 
             <div class="row my-4 g-1 hidden">
                 <div class="col-12">
@@ -423,7 +258,6 @@
                 </div>
 
             </div>
-
 
 
             <div class="row my-4 g-1 hidden">
@@ -503,6 +337,7 @@
 
             </div>
 
+
             <div class="row my-4 g-1 hidden">
                 <div class="col-12">
                     <h2>New Relase</h2>
@@ -546,69 +381,74 @@
     </main>
 
     <footer class="bg-dark text-light py-4">
-        <div class="container col-6">
-            <!-- Icone Social -->
-            <div class="row text-left mb-3">
+
+        <div class="container">
+
+            <div class="row mb-3">
                 <div class="col">
                     <div class="d-flex justify-content-start align-items-center gap-3">
-                        <a href="#" class="square-icon text-reset text-decoration-none">
-                            <i class="bi bi-facebook fs-4"></i>
+                        <a href="#" class="text-reset text-decoration-none">
+                            <i class="bi bi-facebook"></i>
                         </a>
-                        <a href="#" class="square-icon text-reset text-decoration-none">
-                            <i class="bi bi-instagram fs-4"></i>
+                        <a href="#" class="text-reset text-decoration-none">
+                            <i class="bi bi-instagram"></i>
                         </a>
-                        <a href="#" class="square-icon text-reset text-decoration-none">
-                            <i class="bi bi-twitter fs-4"></i>
+                        <a href="#" class="text-reset text-decoration-none">
+                            <i class="bi bi-twitter"></i>
                         </a>
-                        <a href="#" class="square-icon text-reset text-decoration-none">
-                            <i class="bi bi-youtube fs-4"></i>
+                        <a href="#" class="text-reset text-decoration-none">
+                            <i class="bi bi-youtube"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <!-- Link Informativi -->
+
             <div class="row text-left mb-3">
-                <div class="col-4 col-md-3">
-                    <p><a href="#" class="text-light text-decoration-none">Audio and Subtitles</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Media Center</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Privacy</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Contact Us</a></p>
+                <div class="col-6 col-md-3">
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Audio and Subtitles</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Media Center</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Privacy</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact Us</a></li>
+                    </ul>
                 </div>
                 <div class="col-6 col-md-3">
-                    <p><a href="#" class="text-light text-decoration-none">Audio Description</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Investor Relations</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Legal Notices</a></p>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Audio Description</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Investor Relations</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Legal Notices</a></li>
+                    </ul>
                 </div>
                 <div class="col-6 col-md-3">
-                    <p><a href="#" class="text-light text-decoration-none">Help Center</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Jobs</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Cookie Preferences</a></p>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Jobs</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Cookie Preferences</a></li>
+                    </ul>
                 </div>
                 <div class="col-6 col-md-3">
-                    <p><a href="#" class="text-light text-decoration-none">Gift Cards</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Terms of Use</a></p>
-                    <p><a href="#" class="text-light text-decoration-none">Corporate Information</a></p>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Gift Cards</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Terms of Use</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Corporate Information</a></li>
+                    </ul>
                 </div>
             </div>
-            <!-- Pulsante Service Code -->
-            <div class="row text-left mb-3">
+
+            <div class="row mb-3">
                 <div class="col">
                     <button class="btn btn-outline-light btn-sm">Service Code</button>
                 </div>
             </div>
-            <!-- Copyright -->
+
             <div class="row text-left">
                 <div class="col">
                     <p class="mb-0">© 1997-2025 Netflix, Inc.</p>
                 </div>
             </div>
         </div>
-
-
-
-
-
     </footer>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
