@@ -52,7 +52,18 @@
 
         }
 
+/* Stato iniziale delle righe (nascoste) */
+.row.hidden {
+    opacity: 0; /* Invisibili */
+    transform: translateY(50px); /* Spostate verso il basso */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animazione fluida */
+}
 
+/* Stato visibile delle righe */
+.row.show {
+    opacity: 1; /* Visibili */
+    transform: translateY(0); /* Posizione originale */
+}
 
 
 
@@ -145,7 +156,46 @@
 
             <div class="row my-4 g-1 hidden">
                 <div class="col-12">
-                    <h5>Trending Now</h5>
+                    <h3>Trending Now</h3>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
+                    </a>
+                </div>
+                <div class="col col-2 col-6 col-md-2">
+                    <a class="movie_item" href="#">
+                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="row my-4 g-1 hidden">
+                <div class="col-12">
+                    <h3>Trending Now</h3>
                 </div>
                 <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
@@ -223,7 +273,7 @@
 
             <div class="row my-4 g-1 hidden">
                 <div class="col-12">
-                    <h5>Trending Now</h5>
+                    <h3>Trending Now</h3>
                 </div>
                 <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
@@ -262,46 +312,7 @@
 
             <div class="row my-4 g-1 hidden">
                 <div class="col-12">
-                    <h5>Trending Now</h5>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/1.png" alt="filmPrimo">
-                    </a>
-                </div>
-
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/2.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/3.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/4.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/5.png" alt="filmPrimo">
-                    </a>
-                </div>
-                <div class="col col-2 col-6 col-md-2">
-                    <a class="movie_item" href="#">
-                        <img class="img-fluid" src="/assests/imgs/movies/6.png" alt="filmPrimo">
-                    </a>
-                </div>
-
-            </div>
-
-
-            <div class="row my-4 g-1 hidden">
-                <div class="col-12">
-                    <h2>Watch It Againg</h2>
+                    <h3>Watch It Againg</h3>
                 </div>
                 <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">
@@ -340,7 +351,7 @@
 
             <div class="row my-4 g-1 hidden">
                 <div class="col-12">
-                    <h2>New Relase</h2>
+                    <h3>New Relase</h3>
                 </div>
                 <div class="col col-2 col-6 col-md-2">
                     <a class="movie_item" href="#">

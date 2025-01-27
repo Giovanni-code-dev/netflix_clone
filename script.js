@@ -1,19 +1,30 @@
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        const target = entry.target;
-        if (entry.isIntersecting && !target.classList.contains('visible')) {
-            // Se l'elemento entra nella viewport ed è nascosto
-            target.classList.add('visible', 'animate-show');
-            target.classList.remove('hidden', 'animate-hide');
-        } else if (!entry.isIntersecting && target.classList.contains('visible')) {
-            // Se l'elemento esce dalla viewport ed è visibile
-            target.classList.add('hidden', 'animate-hide');
-            target.classList.remove('visible', 'animate-show');
-        }
-    });
-}, { threshold: 0.1 });
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleziona tutte le righe con la classe "row"
+    const rows = document.querySelectorAll(".row.hidden");
 
-document.addEventListener('DOMContentLoaded', () => {
-    const hiddenRows = document.querySelectorAll('.hidden');
-    hiddenRows.forEach((row) => observer.observe(row));
+    // Configura l'osservatore
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Aggiungi una classe per attivare l'animazione
+                    entry.target.classList.add("show");
+                    entry.target.classList.remove("hidden");
+                    // Smette di osservare l'elemento una volta mostrato
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            root: null, // Usa il viewport come area di riferimento
+            rootMargin: "0px",
+            threshold: 0.2, // Mostra l'elemento quando il 20% è visibile
+        }
+    );
+
+    // Osserva ogni riga
+    rows.forEach((row) => {
+        observer.observe(row);
+    });
 });
+
